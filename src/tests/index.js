@@ -109,25 +109,6 @@ describe('react-lottie', () => {
       });
     });
 
-    describe('componentWillUpdate', () => {
-      it('should register events when animationData changes', () => {
-        const registerEventsSpy = sinon.stub();
-        const component = mount(<ReactLottie options={defaultOptions} />);
-
-        component.instance().registerEvents = registerEventsSpy;
-        component.update();
-
-        component.instance().componentWillUpdate({
-          options: {
-            ...defaultOptions,
-            animationData: beatingHeart,
-          },
-        });
-
-        expect(registerEventsSpy.callCount).to.equal(1);
-      });
-    });
-
     describe('componentDidUnmount', () => {
       it('should de-register events', () => {
         const spy = sinon.stub();
