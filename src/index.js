@@ -37,6 +37,7 @@ export default class Lottie extends React.Component {
 
   componentDidUpdate(prevProps) {
     
+    
     if (this.options.animationData !== prevProps.options.animationData) {
       this.deRegisterEvents(this.props.eventListeners);
       this.destroy();
